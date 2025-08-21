@@ -1,0 +1,243 @@
+/* frontend/src/components/schedule/MonthlySchedule.css */
+
+.monthly-schedule {
+    margin-top: 24px;
+  }
+  
+  .monthly-schedule-title {
+    margin-bottom: 16px;
+    color: #262626;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  .schedule-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .summary-card {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .summary-number {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #0095f6, #1877f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 4px;
+  }
+  
+  .summary-label {
+    color: #8e8e8e;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .monthly-events {
+    background: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  
+  .empty-events {
+    color: #8e8e8e;
+    text-align: center;
+    padding: 60px 20px;
+    font-style: italic;
+  }
+  
+  .date-group {
+    border-bottom: 1px solid #efefef;
+  }
+  
+  .date-group:last-child {
+    border-bottom: none;
+  }
+  
+  .date-header {
+    background: #fafafa;
+    color: #262626;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 1px solid #efefef;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .event-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    transition: background 0.2s;
+  }
+  
+  .event-item:hover {
+    background: #fafafa;
+  }
+  
+  .event-item:last-child {
+    border-bottom: none;
+  }
+  
+  .event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .event-time {
+    font-weight: 600;
+    color: #0095f6;
+    font-size: 14px;
+    background: #e3f2fd;
+    padding: 4px 8px;
+    border-radius: 12px;
+  }
+  
+  .event-type-badge {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .event-type-personal {
+    background: linear-gradient(45deg, #f09433, #e6683c);
+    color: white;
+  }
+  
+  .event-type-group {
+    background: linear-gradient(45deg, #56ab2f, #a8e6cf);
+    color: white;
+  }
+  
+  .event-type-consultation {
+    background: linear-gradient(45deg, #ffecd2, #fcb69f);
+    color: #8b4513;
+  }
+  
+  .event-type-other {
+    background: linear-gradient(45deg, #a8a8a8, #d3d3d3);
+    color: white;
+  }
+  
+  .event-title {
+    color: #262626;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .event-details {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  
+  .event-trainer,
+  .event-participants {
+    color: #8e8e8e;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .event-trainer::before {
+    content: '👤';
+    font-size: 12px;
+  }
+  
+  .event-participants::before {
+    content: '👥';
+    font-size: 12px;
+  }
+  
+  .event-description {
+    color: #8e8e8e;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    border-left: 3px solid #dbdbdb;
+  }
+  
+  /* 스크롤바 스타일링 */
+  .monthly-events::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .monthly-events::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+  }
+  
+  .monthly-events::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+    border-radius: 3px;
+  }
+  
+  .monthly-events::-webkit-scrollbar-thumb:hover {
+    background: #c7c7c7;
+  }
+  
+  @media (max-width: 768px) {
+    .schedule-summary {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .summary-card {
+      padding: 16px;
+    }
+    
+    .summary-number {
+      font-size: 20px;
+    }
+    
+    .event-item {
+      padding: 12px 16px;
+    }
+    
+    .event-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    
+    .event-details {
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .date-header {
+      padding: 8px 16px;
+      font-size: 13px;
+    }
+  }
